@@ -1,6 +1,6 @@
 let alph="A,B,C,D,E,F,G,H,I,J,K,L,M,O,P,Q,R,S,T,U,V,W,X,Y,Z";
 let val1 = prompt(" Antre non vale a")
-//let val1=val.split(" ");
+
 //>5K <0Y <3W <3K <6U <3Q
 //"PYTHON";
 
@@ -18,4 +18,4 @@ for(let i=0;i<val1.length;i++){
 
 }
 
-console.log("weeeeeeeeeee" + tab.join(" "))
+console.log( tab.join(" "))
