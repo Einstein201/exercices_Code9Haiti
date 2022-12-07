@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Country</title>
+    <style>
+        ul{
+
+            list-style-type:none ;
+        }
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+    <form >
+        <ul  id="liste">
+            <div></div>
+        </ul>
+
+    <input id="submit" type="submit" value="Submit">
+    </form>
+
+        <br><br>
+
+    <p id="result"></p>
+
+
+<script >
+
+const countryArray = ["Haiti", "France", "United States", "Belgium", "Canada", "Jamaica", "Mexico", "Brazil", "Nigeria"];
+
+
+
+    function countryList(arr) {
+        let listCountry = document.getElementById('liste')
+
+        let mapCountry = new Map();
+
+        for (let i = 0; i < arr.length; i++) {
+
+            let lisCountry = document.createElement('li')
+            lisCountry.setAttribute('name','liCountry')
+            let input = document.createElement('input')
+            input.setAttribute('type', 'checkbox')
+            input.setAttribute('name', 'checkCountry')
+            lisCountry.append(input)
+            lisCountry.setAttribute('id', `lisCountry${i}`)
+            let tempon = mapCountry.set(`lisCountry${i}`, countryArray[i]);
+            let value = tempon.get(`lisCountry${i}`)
+            input.setAttribute('value',`${value}`)
+            lisCountry.append(value)
+            listCountry.append(lisCountry)
+        }
+    }
+
+
+    (countryList(countryArray))
+
+        let visibCountry =document.querySelector('form');
+        visibCountry.addEventListener('submit',(event)=>{
+        event.preventDefault()
+
+        let affVal=document.createElement('div')
+        affVal.setAttribute('id','affCountry')
+        let data =new FormData(visibCountry)
+
+        const chwaUser = visibCountry.querySelectorAll('input[name=checkCountry]:checked')
+        let choices = [];
+        for(let i = 0; i<chwaUser.length;i++){
+            choices.push(chwaUser[i].value )
+        }
+        
+        let affCountry =document.getElementById('result');
+        affCountry.innerText=`${choices}`
+        
+    })
+
+ </script>
+
+
+</body>
+
+</html>
