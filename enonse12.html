@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    
+    <!-- Gras ak HTML sa:
+
+<div id="timer" value="5"></div>
+Yo mande w kreye yon timer, kote wap afiche nouvo valè a, anndan div la chak segonn. 
+Timer a dwe konte alanvè soti nan valè ki nan atribi value a pou rive nan 0 (Zewo a dwe afiche). 
+Lè l fin rive nan zewo, li dwe kanpe epi afiche time out nan plas chif la. -->
+
+
+<div id="timer" value="5"></div>
+
+
+<script>
+
+        let time1 = document.getElementById("timer");
+        let timings = time1.getAttribute("value");
+        console.log(timings);
+
+        var myInterval = setInterval(Timeout, 1000);
+
+        function Timeout(){
+            
+            time1.innerHTML= timings--;
+     
+            if(time1.innerHTML<0)
+            time1.innerText="time out";
+        }
+
+
+    </script>
+
+
+</body>
+</html>
